@@ -7,10 +7,8 @@ export class UsersService {
   constructor(private prisma: PrismaService) {}
 
   async updateProblemsFlag(): Promise<{ updated: number; usersWithProblem: number }> {
-    // Подсчитаем количество пользователей с флагом problems = true
     const usersWithProblem = await this.prisma.user.count({ where: { problems: true } });
 
-    // Обновим всех пользователей, у которых problems = true
     const updateResult = await this.prisma.user.updateMany({
       where: { problems: true },
       data: { problems: false },

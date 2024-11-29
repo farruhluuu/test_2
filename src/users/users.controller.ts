@@ -1,6 +1,6 @@
-import { Body, Controller, Patch, Post } from '@nestjs/common';
-import { UsersService } from './users.service';
-import { CreateUserDto } from './dto/create-user.dto';
+import { Body, Controller, Patch, Post } from '@nestjs/common'
+import { UsersService } from './users.service'
+import { CreateUserDto } from './dto/create-user.dto'
 
 @Controller('users')
 export class UsersController {
@@ -8,11 +8,11 @@ export class UsersController {
 
   @Patch('reset-problems')
   async resetProblemsFlag() {
-    const result = await this.usersService.updateProblemsFlag();
-    return result;
+    const result = await this.usersService.updateProblemsFlag()
+    return result
   }
   @Post()
   async create(@Body() createUserDto: CreateUserDto) {
-    return this.usersService.create(createUserDto);
+    return this.usersService.create(createUserDto)
   }
 }

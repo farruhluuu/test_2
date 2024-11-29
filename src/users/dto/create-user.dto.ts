@@ -1,4 +1,4 @@
-import { IsString, IsInt, IsBoolean, Min, Max } from 'class-validator';
+import { IsString, IsInt, IsBoolean, Min, Max } from 'class-validator'
 
 export class CreateUserDto {
   @IsString()

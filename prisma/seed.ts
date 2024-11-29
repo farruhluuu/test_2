@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import { faker } from '@faker-js/faker';
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 async function main() {
   for (let i = 0; i < 1000000; i++) {
@@ -15,7 +15,7 @@ async function main() {
       },
     });
   }
-  console.log('Seed completed');
+  console.log('Seed completed')
 }
 
 main()
@@ -23,5 +23,5 @@ main()
     throw e;
   })
   .finally(async () => {
-    await prisma.$disconnect();
+    await prisma.$disconnect()
   });
